@@ -1,13 +1,15 @@
 package com.example.bookrater;
 
+
 import android.net.Uri;
-import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 
 public class NetworkUtils {
@@ -15,7 +17,7 @@ public class NetworkUtils {
             NetworkUtils.class.getSimpleName();
 
     // Base URL for Books API.
-    private static final String BOOK_BASE_URL =  "https://www.googleapis.com/books/v1/volumes?";
+    private static final String BOOK_BASE_URL =  "https://books.googleapis.com/books/v1/volumes?";
     // Parameter for the search string.
     private static final String QUERY_PARAM = "q";
     // Parameter that limits search results.
@@ -67,7 +69,7 @@ public class NetworkUtils {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
             }
@@ -80,7 +82,7 @@ public class NetworkUtils {
             }
         }
 
-        Log.d(LOG_TAG, bookJSONString);
+//        Log.d(LOG_TAG, bookJSONString);
 
         return bookJSONString;
 
