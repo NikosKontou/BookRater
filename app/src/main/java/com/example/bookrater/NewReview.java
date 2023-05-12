@@ -1,7 +1,5 @@
 package com.example.bookrater;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -12,12 +10,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
 
-
-public class NewReview extends AppCompatActivity
-    implements LoaderManager.LoaderCallbacks<String>{
+public class NewReview extends AppCompatActivity {
     private EditText mBookInput;
     private TextView mTitleText;
     private TextView mAuthorText;
@@ -50,15 +44,7 @@ public class NewReview extends AppCompatActivity
 
         if (networkInfo != null && networkInfo.isConnected()
                 && queryString.length() != 0) {
-//            new FetchBook(mTitleText, mAuthorText).execute(queryString);
-
-            Bundle queryBundle = new Bundle();
-            queryBundle.putString("queryString", queryString);
-            //LOADER MANAGER
-//            getSupportLoaderManager().restartLoader(0, queryBundle, this);
-            LoaderManager.getInstance(this).initLoader(0, null, this);
-
-
+            new FetchBook(mTitleText, mAuthorText).execute(queryString);
             mAuthorText.setText("");
             mTitleText.setText(R.string.loading);
         } else {
@@ -72,28 +58,5 @@ public class NewReview extends AppCompatActivity
         }
     }
 
-
-    @NonNull
-    @Override
-    public Loader onCreateLoader(int id, @Nullable Bundle args) {
-        String queryString = "";
-
-        if (args != null) {
-            queryString = args.getString("queryString");
-        }
-
-        return new BookLoader(this, "Romeo");
-    }
-
-
-    @Override
-    public void onLoadFinished(@NonNull androidx.loader.content.Loader<String> loader, String data) {
-
-    }
-
-    @Override
-    public void onLoaderReset(@NonNull androidx.loader.content.Loader<String> loader) {
-
-    }
 
 }
