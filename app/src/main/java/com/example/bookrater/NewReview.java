@@ -3,6 +3,7 @@ package com.example.bookrater;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -59,4 +60,14 @@ public class NewReview extends AppCompatActivity {
     }
 
 
+    public void newReview(View view) {
+        String title = (String) mTitleText.getText();
+        String author = (String) mAuthorText.getText();
+        Bundle bundle = new Bundle();
+        bundle.putString(title, author);
+        Intent intent = new Intent(this, CreateNewReview.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+
+    }
 }
