@@ -61,10 +61,12 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="new Review"
+        android:layout_marginTop="88dp"
         android:onClick="newReview"
+        android:text="new Review"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.418"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleText"/>
+        app:layout_constraintTop_toBottomOf="@+id/searchButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

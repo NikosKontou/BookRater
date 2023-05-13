@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -61,11 +62,13 @@ public class NewReview extends AppCompatActivity {
 
 
     public void newReview(View view) {
-        String title = (String) mTitleText.getText();
-        String author = (String) mAuthorText.getText();
+        String title = mTitleText.getText().toString();
+        String author = mAuthorText.getText().toString();
+
+        Intent intent = new Intent(NewReview.this, CreateNewReview.class);
         Bundle bundle = new Bundle();
-        bundle.putString(title, author);
-        Intent intent = new Intent(this, CreateNewReview.class);
+        bundle.putString("title", title);
+        bundle.putString("author", author);
         intent.putExtras(bundle);
         startActivity(intent);
 
