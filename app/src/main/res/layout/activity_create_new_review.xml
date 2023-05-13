@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateNewReview">
+    tools:context=".CreateNewReview"
+    android:padding="10dp">
 
     <Button
         android:id="@+id/saveReview"
@@ -15,14 +16,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="createReview" />
 
     <TextView
         android:id="@+id/titleTextNewReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:text="Title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,17 +33,20 @@
         android:id="@+id/authorTextNewReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Author"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTextNewReview" />
 
     <RatingBar
+        android:contentDescription="rate the book out of 5"
         android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/authorTextNewReview" />
 
@@ -56,9 +61,10 @@
         app:layout_constraintTop_toBottomOf="@+id/ratingBar">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reviewText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="review" />
+            android:hint="Type your review" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
