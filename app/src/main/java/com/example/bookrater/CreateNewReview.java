@@ -19,6 +19,8 @@ public class CreateNewReview extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //instantiate room db
+        ReviewDatabase db = Room.databaseBuilder(getApplicationContext(), ReviewDatabase.class, "my-db-name").build();
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_create_new_review);
@@ -48,13 +50,13 @@ public class CreateNewReview extends AppCompatActivity {
     }
 
     private void saveData(String title, String author, float rating, String review){
-        //instantiate room db
-        ReviewDatabase db = Room.databaseBuilder(getApplicationContext(), ReviewDatabase.class, "my-db-name").build();
         Review reviewObj = new Review();
         reviewObj.setTitle(title);
         reviewObj.setAuthor(author);
         reviewObj.setRating(rating);
         reviewObj.setReview(review);
-        db.reviewDao().insert(reviewObj);
+        InsertReviewLoader loader = new InsertReviewLoader(this, reviewObj);
+        loader.forceLoad();
+//        db.reviewDao().insert(reviewObj);
     }
 }
