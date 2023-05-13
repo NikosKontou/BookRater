@@ -21,4 +21,8 @@ public interface ReviewDao {
 
     @Query("SELECT * FROM review")
     List<Review> getAllReviews();
+
+    @Query("SELECT * FROM review")
+    List<Review> getAllReviewsSync();
+
 }
