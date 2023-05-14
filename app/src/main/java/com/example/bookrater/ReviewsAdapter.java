@@ -1,5 +1,9 @@
 package com.example.bookrater;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,8 +36,22 @@ public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ViewHold
         holder.titleTextView.setText(review.getTitle());
         holder.authorTextView.setText(review.getAuthor());
         holder.ratingBar.setRating(review.getRating());
-        holder.itemView.setOnClickListener(v -> {
-            // Handle click on the item
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create an Intent to launch the other activity
+                Intent intent = new Intent(view.getContext(), EditReview.class);
+
+                // Put the clicked Review object as an extra in the Intent
+                intent.putExtra("id", review.getId());
+                intent.putExtra("title", review.getTitle());
+                intent.putExtra("author", review.getAuthor());
+                intent.putExtra("review", review.getReview());
+                intent.putExtra("rating", review.getRating());
+
+                // Launch the activity
+                view.getContext().startActivity(intent);
+            }
         });
     }
 

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.BookRater"
         tools:targetApi="31">
         <activity
+            android:name=".EditReview"
+            android:exported="false" />
+        <activity
             android:name=".ViewReviews"
             android:exported="false" />
         <activity

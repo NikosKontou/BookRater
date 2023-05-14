@@ -31,8 +31,6 @@ public class ViewReviews extends AppCompatActivity implements ViewReviewLoaderCa
     @Override
     public void onLoadFinished(List<Review> reviews) {
 
-
-
         RecyclerView reviewsRecyclerView = findViewById(R.id.reviewsRecyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         reviewsRecyclerView.setLayoutManager(layoutManager);
