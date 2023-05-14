@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Book rater</string>
     <string name="create_new_review">Create new review</string>
-    <string name="instructions">instruction</string>
-    <string name="input_hint">input hint</string>
+    <string name="instructions">To create a new review, find the book you want</string>
+    <string name="input_hint">Type a book title</string>
     <string name="button_text">search</string>
     <string name="no_results">no results found</string>
     <string name="loading">Results are loading</string>

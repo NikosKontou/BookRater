@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Button.greyTint" parent="ThemeOverlay.AppCompat">
+    <item name="colorPrimary">#999988</item>
+</style>
+</resources>
