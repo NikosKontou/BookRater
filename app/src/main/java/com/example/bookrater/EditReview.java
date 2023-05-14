@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -89,9 +90,20 @@ public class EditReview extends AppCompatActivity {
 
 // Set the QR code bitmap to the ImageView
         if (qrCodeBitmap != null) {
+            Button hideQr = findViewById(R.id.hideQr);
+            hideQr.setVisibility(View.VISIBLE);
             qrCodeImageView.setImageBitmap(qrCodeBitmap);
+            qrCodeImageView.setVisibility(View.VISIBLE);
         }
 
+    }
+    public void hideQr(View view){
+
+        Button hideQr = findViewById(R.id.hideQr);
+        hideQr.setVisibility(View.INVISIBLE);
+
+        ImageView qrCodeImageView = findViewById(R.id.qr_code_image_view);
+        qrCodeImageView.setVisibility(View.INVISIBLE);
     }
 
     public void smsShare(View view) {
