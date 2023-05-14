@@ -5,6 +5,17 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "review")
 public class Review {
+
+    Review(int id, String title, String author, String review, float rating){
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.review =review;
+        this.rating =rating;
+    }
+    Review(){
+
+    }
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String title;

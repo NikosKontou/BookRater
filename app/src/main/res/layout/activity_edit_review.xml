@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".EditReview">
 
+
+    <ImageView
+        android:id="@+id/qr_code_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="108dp"
+        android:contentDescription="scan the qr code to display the review"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
     <TextView
         android:id="@+id/authorEdit"
         android:layout_width="wrap_content"
@@ -119,6 +133,8 @@
                 android:layout_weight="1"
                 android:onClick="deleteReview"
                 android:text="delete" />
+
+
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
