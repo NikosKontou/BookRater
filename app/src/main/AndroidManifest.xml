@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookRater"
         tools:targetApi="31">
+        <activity
+            android:name=".AccessPhoneContacts"
+            android:exported="false" />
         <activity
             android:name=".EditReview"
             android:exported="false" />

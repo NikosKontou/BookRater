@@ -95,13 +95,21 @@ public class EditReview extends AppCompatActivity {
     }
 
     public void smsShare(View view) {
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.putExtra(Intent.EXTRA_TEXT, createReviewText());
-        intent.setData(Uri.parse("smsto:"));
+        Bundle bundle = new Bundle();
+        bundle.putString("message", createReviewText());
+        Intent intent = new Intent(EditReview.this, AccessPhoneContacts.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+
+
+        //vanila contacts
+//        Intent intent = new Intent(Intent.ACTION_SENDTO);
+//        intent.putExtra(Intent.EXTRA_TEXT, createReviewText());
+//        intent.setData(Uri.parse("smsto:"));
         // Start the activity to send the SMS
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
+//        if (intent.resolveActivity(getPackageManager()) != null) {
+//            startActivity(intent);
+//        }
     }
 
     private String createReviewText(){
