@@ -25,4 +25,8 @@ public interface ReviewDao {
     @Query("SELECT * FROM review")
     List<Review> getAllReviewsSync();
 
+    @Query("DELETE FROM review where id = :id")
+    int deleteReviewById(int id);
+
+
 }
