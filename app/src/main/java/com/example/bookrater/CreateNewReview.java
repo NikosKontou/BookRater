@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -57,6 +58,9 @@ public class CreateNewReview extends AppCompatActivity {
         reviewObj.setReview(review);
         InsertReviewLoader loader = new InsertReviewLoader(this, reviewObj);
         loader.forceLoad();
+        Toast.makeText(CreateNewReview.this, "Successfully saved review", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(CreateNewReview.this, MainActivity.class);
+        startActivity(intent);
 //        db.reviewDao().insert(reviewObj);
     }
 }

@@ -5,6 +5,8 @@ import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -38,4 +40,12 @@ public class ViewReviews extends AppCompatActivity implements ViewReviewLoaderCa
         reviewsRecyclerView.setAdapter(adapter);
 
     }
+
+    public void onBackPressed() {
+        // super.onBackPressed();
+        Intent intent = new Intent(ViewReviews.this, MainActivity.class);
+        startActivity(intent);
+        return;
+    }
+
 }

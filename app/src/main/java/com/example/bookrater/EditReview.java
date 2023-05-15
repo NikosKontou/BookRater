@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.zxing.BarcodeFormat;
@@ -70,6 +71,7 @@ public class EditReview extends AppCompatActivity {
         UpdateReviewLoader loader = new UpdateReviewLoader(this, reviewObj);
         loader.forceLoad();
         Intent intent = new Intent(EditReview.this, ViewReviews.class);
+        Toast.makeText(EditReview.this, "Changes saved", Toast.LENGTH_LONG).show();
         startActivity(intent);
     }
 
@@ -77,6 +79,7 @@ public class EditReview extends AppCompatActivity {
         DeleteReviewLoader loader = new DeleteReviewLoader(this, reviewId);
         loader.forceLoad();
         Intent intent = new Intent(EditReview.this, ViewReviews.class);
+        Toast.makeText(EditReview.this, "Successfully deleted", Toast.LENGTH_LONG).show();
         startActivity(intent);
     }
 

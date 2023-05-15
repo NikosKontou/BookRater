@@ -10,13 +10,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class NewReview extends AppCompatActivity {
     private EditText mBookInput;
     private TextView mTitleText;
     private TextView mAuthorText;
+    private Button newReviewButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,7 @@ public class NewReview extends AppCompatActivity {
         mBookInput = (EditText)findViewById(R.id.bookInput);
         mTitleText = (TextView)findViewById(R.id.titleText);
         mAuthorText = (TextView)findViewById(R.id.authorText);
+        newReviewButton = (Button)findViewById(R.id.button2);
     }
 
     public void searchBooks(View view) {
@@ -70,7 +74,17 @@ public class NewReview extends AppCompatActivity {
         bundle.putString("title", title);
         bundle.putString("author", author);
         intent.putExtras(bundle);
-        startActivity(intent);
-
+        if(checkBookData()) {
+            startActivity(intent);
+        }else{
+            Toast.makeText(NewReview.this, "First search a book", Toast.LENGTH_LONG).show();
+        }
+    }
+    private boolean checkBookData(){
+        if(this.mTitleText.getText().equals(getString(R.string.no_search_term)) || this.mTitleText.getText().equals(getString(R.string.no_network))|| this.mTitleText.getText().equals(getString(R.string.loading)) || this.mTitleText.getText().equals(getString(R.string.no_results)) || this.mTitleText.getText().equals("")){
+            return false;
+        }else{
+            return true;
+        }
     }
 }

@@ -26,4 +26,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onBackPressed() {
+        minimizeApp();
+    }
+
+    public void minimizeApp() {
+        Intent startMain = new Intent(Intent.ACTION_MAIN);
+        startMain.addCategory(Intent.CATEGORY_HOME);
+        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startMain);
+    }
+
+
+
 }
