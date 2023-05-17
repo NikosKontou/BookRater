@@ -8,150 +8,142 @@
     tools:context=".EditReview">
 
 
-    <Button
-        android:id="@+id/hideQr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:elevation="10dp"
-        android:onClick="hideQr"
-        android:text="@string/hide_qr_code"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:theme="@style/Button.greyTint"
-        app:layout_constraintStart_toStartOf="parent" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/qr_code_image_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#ffffff"
-        android:contentDescription="@string/scan_the_qr_code_to_display_the_review"
-        android:elevation="1dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_launcher_foreground"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
-
-    <TextView
-        android:id="@+id/authorEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/titleEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authorEdit" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/hideQr"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editRating">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editReview"
+        <ImageView
+            android:id="@+id/qr_code_image_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/edit_review" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center_horizontal"
+            android:background="#ffffff"
+            android:contentDescription="@string/scan_the_qr_code_to_display_the_review"
+            android:elevation="1dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_launcher_foreground"
+            android:visibility="invisible" />
 
-    <RatingBar
-        android:id="@+id/editRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/edit_saved_rating"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleEdit" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintStart_toStartOf="parent">
+        <Button
+            android:id="@+id/hideQr"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:elevation="10dp"
+            android:onClick="hideQr"
+            android:text="@string/hide_qr_code"
+            android:theme="@style/Button.greyTint"
+            android:visibility="invisible" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="10sp"
-            android:layout_marginBottom="10sp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/contactShare"
+            <TextView
+                android:id="@+id/titleEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/authorEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <RatingBar
+                android:id="@+id/editRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/edit_saved_rating" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editReview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_review" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="10sp"
-                android:layout_weight="1"
-                android:onClick="smsShare"
-                android:text="@string/share_with_sms"
-                android:theme="@style/Button.greyTint" />
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:paddingTop="30dp">
 
-            <Button
-                android:id="@+id/qrShare"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:onClick="qrCodeShare"
-                android:text="@string/qr_share"
-                android:theme="@style/Button.greyTint" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginBottom="10sp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/contactShare"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10sp"
+                        android:layout_weight="1"
+                        android:onClick="smsShare"
+                        android:text="@string/share_with_sms"
+                        android:theme="@style/Button.greyTint" />
+
+                    <Button
+                        android:id="@+id/qrShare"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:onClick="qrCodeShare"
+                        android:text="@string/qr_share"
+                        android:theme="@style/Button.greyTint" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginRight="10sp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/saveChanges"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10sp"
+                        android:layout_weight="1"
+                        android:onClick="saveChanges"
+                        android:text="Save"
+                        android:theme="@style/Button.greyTint" />
+
+                    <Button
+                        android:id="@+id/deleteReview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10sp"
+                        android:layout_weight="1"
+                        android:onClick="deleteReview"
+                        android:text="delete"
+                        android:theme="@style/Button.greyTint" />
+
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="10sp"
-            android:orientation="horizontal">
+    </FrameLayout>
 
-            <Button
-                android:id="@+id/saveChanges"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="10sp"
-                android:layout_weight="1"
-                android:onClick="saveChanges"
-                android:text="Save"
-                android:theme="@style/Button.greyTint" />
-
-            <Button
-                android:id="@+id/deleteReview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10sp"
-                android:layout_weight="1"
-                android:onClick="deleteReview"
-                android:text="delete"
-                android:theme="@style/Button.greyTint" />
-
-
-        </LinearLayout>
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
