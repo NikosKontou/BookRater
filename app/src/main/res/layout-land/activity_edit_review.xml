@@ -58,6 +58,13 @@
                     android:layout_marginTop="10dp"
                     android:text="TextView" />
 
+                <RatingBar
+                    android:id="@+id/editRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10sp"
+                    android:contentDescription="@string/edit_saved_rating" />
+
                 <Button
                     android:id="@+id/contactShare"
                     android:layout_width="match_parent"
@@ -67,13 +74,6 @@
                     android:onClick="smsShare"
                     android:text="@string/share_with_sms"
                     android:theme="@style/Button.greyTint" />
-
-                <RatingBar
-                    android:id="@+id/editRating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10sp"
-                    android:contentDescription="@string/edit_saved_rating" />
 
                 <Button
                     android:id="@+id/saveChanges"
